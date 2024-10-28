@@ -1,0 +1,131 @@
+//Take a moment & Write an algorithm and draw a flowchart that will calculate the roots of a quadratic equation :
+ALGORITHM task
+VAR
+    a,b,c,d:INTEGER;
+    x,x1,x2:FLOAT;
+BEGIN
+    write("donner la val de a");
+    read(a);
+    write("donner la val de b");
+    read(b);
+    write("donner la val de c");
+    read(c);
+    d:=(b^2)-4*a*c;
+    IF (d>0) THEN
+        IF (d=0) THEN
+            x:=-b/(2*a);
+            write("puisque la val de delta est egale a 0 donc il ya une seule solution: x=",x)
+            ELSE 
+            
+            x1:= (-b -sqrt(d))/2*a
+            x2:= (-b +sqrt(d))/2*a
+            write("puisque la val de delta est sup a 0 donc il ya 2 solutions: x1=",x1,"et x2=",x2)
+        END_IF
+    ELSE write("puisque la val de delta est negative donc il ya pas de solution")
+    END_IF
+        
+END
+//1.) Create an algorithm and a flowchart that will accept/read two numbers and then display the bigger number.
+ALGORITHM exercice_1
+VAR
+    a,b:INTEGER;
+    
+BEGIN
+write("donner la val de a");
+read(a);
+write("donner la val de b");
+read(b);
+IF (a>b) THEN
+write("A > B",a,">",b);
+ELSE 
+write("A < B",a,"<",b);
+END_IF
+END
+//2.) Create an algorithm and a flowchart that will compute the area of a circle.
+
+ALGORITHM exercice_2
+VAR
+pi:FLOAT:=3.14;
+r,area:FLOAT;
+BEGIN
+
+write("donner le rayon");
+read(r);
+WHILE (r<=0) DO
+    write("donner une rayon positif");
+read(r);
+END_WHILE 
+area:=pi*r*r;
+Write("lair du cercle est =",area);
+END
+// Create an algorithm and a flowchart that will compute the sum of two numbers. If the sum is below or equal to twenty, two numbers will be entered again. If the sum is above 20, it will display the sum.
+ALGORITHM exercice_3
+VAR 
+a,b,sum:INTEGER;
+BEGIN
+write("donner la val de a");
+    read(a);
+    write("donner la val de a");
+    read(b);
+    write("donner la val de b");
+    sum:=a+b;
+    WHILE (sum<=20)DO
+    read(a);
+    write("donner la nouvelle val de a");
+    read(b);
+    write("donner la nouvelle val de b");
+    sum:=a+b;
+    END_WHILE 
+    write("la somme est",sum);
+    END
+    // 4.)  Create an algorithm and a flowchart that will output the largest number among the three numbers.
+
+ALGORITHM exercice_4
+VAR
+a,b,c:INTEGER;
+BEGIN
+  write("donner la val de a");
+    read(a);
+    write("donner la val de b");
+    read(b);
+    write("donner la val de c");
+    read(c);
+IF(a>b)THEN
+    IF(a>c)
+        Write("a est plus grand",a)
+        ELSE Write ("c est plus grand",c)
+        END_IF
+  ELSE
+  IF (b>c) THEN
+    Write("b est plus grand",b)
+    ELSE Write("c est plus grand",c)
+  END_IF 
+  END_IF     
+    
+END    
+
+
+
+// Checkpoint : At this checkpoint, you are asked to write an algorithm that read a sentence, which ends with a point, character by character, and to determine:
+ALGORITHM sentence
+VAR 
+nc,nv,i:INTEGER:=0;
+nm:INTEGER:=1;
+sentence:STRING;
+BEGIN
+write("donnez une phrase");
+read(sentence);
+while (sentence[i]!=".") DO
+    IF (sentence[i]==" ") THEN
+        nm:=nm+1
+    END_IF
+    IF (sentence[i]!==" " && sentence[i]!=="," ) THEN
+        nc:=nc+1
+    END_IF
+    SWITCH (sentence[i]) DO
+        case "a", "e", "i", "o", "u", "y", "A", "E", "I", "O", "U", "Y" : nv:=nv+1;
+    END_SWITCH
+i:=i+1;
+END_WHILE
+END
+
